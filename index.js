@@ -1,10 +1,9 @@
-'use strict';
 
 var through = require('through2');
 var minimatch = require("minimatch");
 
 // consts
-const PLUGIN_NAME = 'gulp-concat-link';
+const PLUGIN_NAME = 'gulp-merge-link';
 
 module.exports = function (options) {
     /*
@@ -19,10 +18,10 @@ module.exports = function (options) {
 
     var templateLink = function (href) {
         return '<link rel="stylesheet" href="' + href + '"/>';
-    }
+    };
     var templateScript = function (src) {
         return '<script type="text/javascript" src="' + src + '"></script>';
-    }
+    };
 
     var getMatch = function (reg, contents) {
         var result, matches = [];
@@ -33,7 +32,7 @@ module.exports = function (options) {
             });
         }
         return matches;
-    }
+    };
 
     var getTemplate = function (url) {
         var isScript = /\.js$/.test(url);
@@ -43,7 +42,7 @@ module.exports = function (options) {
         else {
             return templateLink(url);
         }
-    }
+    };
 
     return through.obj(function (file, encoding, callback) {
         if (file.isNull() || file.isStream()) {
@@ -103,7 +102,7 @@ module.exports = function (options) {
         return callback(null, file);
 
     });
-}
+};
 
 
 

@@ -1,0 +1,41 @@
+{
+  "name": "gulp-merge-link",
+  "version": "0.1.0",
+  "description": "Merge <link> or <script> on html.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+     "url": "https://github.com/aDaiCode/gulp-merge-link.git"
+  },
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "gulpfriendly",
+    "link",
+    "html",
+    "concat",
+  ],
+  "author": {
+    "name": "adai",
+    "email": "aDaiCode@163.com"
+  },
+  "homepage": "https://github.com/aDaiCode/gulp-merge-link",
+  "license": "MIT",
+   "bugs": {
+    "url": "https://github.com/aDaiCode/gulp-merge-link/issues"
+  },
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "through2": "^0.6.3",
+    "minimatch":"^2.0.8"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "event-stream": "^3.2.2",
+    "gulp": "^3.8.10",
+    "mocha": "^2.1.0",
+    "vinyl": "^0.4.6",
+    "through2": "^0.6.3",
+    "minimatch":"^2.0.8"
+  }
+}
