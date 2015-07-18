@@ -1,3 +1,7 @@
+/**
+ * Created by adai 
+ */
+
 'use strict';
 
 var mergeLink = require('../');

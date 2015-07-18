@@ -1,4 +1,6 @@
-
+/**
+ * Created by adai 
+ */
 var through = require('through2');
 var minimatch = require("minimatch");
 
@@ -6,12 +8,6 @@ var minimatch = require("minimatch");
 const PLUGIN_NAME = 'gulp-merge-link';
 
 module.exports = function (options) {
-    /*
-     var options = {
-     'all.js': ['js/*.js'],
-     'base.css': ['./css/common.css', './css/header.css', '/.css/footer.css']
-     };
-     * */
 
     var regLink = /<link(?:\s+|\s+\S+\s+)href\s*=\s*["']?(.+\.css).*?>/g;
     var regScript = /<script(?:\s+|\s+\S+\s+)src\s*=\s*["']?(.+\.js).*?script\s*>/g;
