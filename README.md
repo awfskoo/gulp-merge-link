@@ -5,7 +5,7 @@
 ## Install
 
 ```
-npm install --save-dev gulp-replace
+npm install gulp-replace
 ```
 
 ## Normal Usage
@@ -42,15 +42,15 @@ Type:`Array`
 
 key/value Map.
 
-####key
+#### key
 Type:`String`
 
 The new Url of some file concated.
 
-####value: {Array}
+#### value: {Array}
 Urls will be replaced.
 
-##Example
+## Example
 >Before:
 
 ```html

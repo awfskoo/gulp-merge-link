@@ -5,15 +5,18 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-     "url": "https://github.com/aDaiCode/gulp-merge-link.git"
+    "url": "https://github.com/aDaiCode/gulp-merge-link.git"
   },
   "keywords": [
     "gulp",
     "gulpplugin",
     "gulpfriendly",
+    "merge",
     "link",
     "html",
     "concat",
+    "script",
+    "combine"
   ],
   "author": {
     "name": "adai",
@@ -21,13 +24,12 @@
   },
   "homepage": "https://github.com/aDaiCode/gulp-merge-link",
   "license": "MIT",
-   "bugs": {
+  "bugs": {
     "url": "https://github.com/aDaiCode/gulp-merge-link/issues"
   },
   "dependencies": {
-    "gulp": "^3.8.10",
     "through2": "^0.6.3",
-    "minimatch":"^2.0.8"
+    "minimatch": "^2.0.8"
   },
   "devDependencies": {
     "chai": "^1.10.0",
@@ -36,6 +38,6 @@
     "mocha": "^2.1.0",
     "vinyl": "^0.4.6",
     "through2": "^0.6.3",
-    "minimatch":"^2.0.8"
+    "minimatch": "^2.0.8"
   }
 }
