@@ -71,7 +71,7 @@ Type:`{Object}`
 
 Default:`{debug:false}`
 
-Print some information about `script` or 'link' replaced.
+Print some information about `script` or `link` replaced.
 
 ## Example
 
