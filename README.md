@@ -48,6 +48,7 @@ gulp.task('merge', function () {
         .pipe(gulp.dest('dist/html/'));
 });
 });
+```
 
 ## API
 
