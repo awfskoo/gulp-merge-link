@@ -28,29 +28,52 @@ var merge=require('gulp-merge-link');
 gulp.task('merge', function () {
     gulp.src('html/*.html')
         .pipe(merge({
-            'base.css':['header.css','footer.css','./lib/*.css',],
+            'base.css':['header.css','footer.css','./lib/*.css'],
             'base.js':['lib/*.js','header.js']
         }))
         .pipe(gulp.dest('dist/html/'));
 });
 ```
+## Print Info Usage
+```javascript
+var merge = require('gulp-merge-link');
+
+gulp.task('merge', function () {
+    gulp.src('html/*.html')
+        .pipe(merge({
+                'base.css': ['header.css', 'footer.css', './lib/*.css'],
+                'base.js': ['lib/*.js', 'header.js']
+            }, {debug: true}
+        ))
+        .pipe(gulp.dest('dist/html/'));
+});
+});
 
 ## API
 
-### merge(options)
-Type:`Array`
+### merge(options,config)
+
+### options
+
+Type:`{Array}`
 
 key/value Map.
 
-#### key
-Type:`String`
-
+`key`:`{String}`
 The new Url of some file concated.
 
-#### value: {Array}
+`value`: `{Array}`
 Urls will be replaced.
 
+### config
+Type:`{Object}`
+
+Default:`{debug:false}`
+
+Print some information about `script` or 'link' replaced.
+
 ## Example
+
 >Before:
 
 ```html
@@ -70,6 +93,7 @@ Urls will be replaced.
 </body>
 </html>
 ```
+
 >After  require('gulp-merge-link')(options)
 
 ```html

@@ -1,7 +1,7 @@
 {
   "name": "gulp-merge-link",
-  "version": "0.1.0",
-  "description": "Merge <link> or <script> on html.",
+  "version": "0.1.2",
+  "description": "Merge -link-tag or -script-tag on html.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "through2": "^0.6.3",
-    "minimatch": "^2.0.8"
+    "minimatch": "^2.0.8",
+    "gulp-util": "^3.0.0",
+    "chalk": "^1.0.0"
   },
   "devDependencies": {
     "chai": "^1.10.0",
@@ -38,6 +40,8 @@
     "mocha": "^2.1.0",
     "vinyl": "^0.4.6",
     "through2": "^0.6.3",
-    "minimatch": "^2.0.8"
+    "minimatch": "^2.0.8",
+    "gulp-util": "^3.0.0",
+    "chalk": "^1.0.0"
   }
 }

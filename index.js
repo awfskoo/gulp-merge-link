@@ -1,16 +1,20 @@
 /**
- * Created by adai 
+ * Created by adai
  */
 var through = require('through2');
 var minimatch = require("minimatch");
+var gutil = require('gulp-util');
+var chalk = require('chalk');
 
 // consts
 const PLUGIN_NAME = 'gulp-merge-link';
 
-module.exports = function (options) {
+module.exports = function (options, config) {
+    options = options || [];
+    config = config || {debug: false};
 
-    var regLink = /<link(?:\s+|\s+\S+\s+)href\s*=\s*["']?(.+\.css).*?>/g;
-    var regScript = /<script(?:\s+|\s+\S+\s+)src\s*=\s*["']?(.+\.js).*?script\s*>/g;
+    var regLink = /<link(?:\s+|\s+.+\s+)href\s*=\s*["']?(.+\.css).*?>/g;
+    var regScript = /<script(?:\s+|\s+.+\s+)src\s*=\s*["']?(.+\.js).*?script\s*>/g;
 
     var templateLink = function (href) {
         return '<link rel="stylesheet" href="' + href + '"/>';
@@ -38,6 +42,11 @@ module.exports = function (options) {
         else {
             return templateLink(url);
         }
+    };
+
+    var log=config.debug? function () {
+        gutil.log.apply(gutil,arguments);
+    }: function () {
     };
 
     return through.obj(function (file, encoding, callback) {
@@ -89,8 +98,10 @@ module.exports = function (options) {
             }
         }
 
+        log(file.path);
         for (i = 0; i < replaceList.length; i++) {
             contents = contents.replace(replaceList[i].match, replaceList[i].replace);
+           log(chalk.green( replaceList[i].match),'-->',chalk.red(replaceList[i].replace||'delete'));
         }
 
         file.contents = new Buffer(contents);
