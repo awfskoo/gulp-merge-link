@@ -13,14 +13,14 @@ module.exports = function (options, config) {
     options = options || [];
     config = config || {debug: false};
 
-    var regLink = /<link(?:\s+|\s+.+\s+)href\s*=\s*["']?(.+\.css).*?>/g;
-    var regScript = /<script(?:\s+|\s+.+\s+)src\s*=\s*["']?(.+\.js).*?script\s*>/g;
+    var regLink = /{{(?:\s+|\s+.+\s+)stylesheet_link\(\s*["']?(.+\.css).*?\)(?:\s+|\s+.+\s+)}}/g;
+    var regScript = /{{(?:\s+|\s+.+\s+)javascript_include\(\s*["']?(.+\.css).*?\)(?:\s+|\s+.+\s+)}}/g;
 
     var templateLink = function (href) {
-        return '<link rel="stylesheet" href="' + href + '"/>';
+        return '{{ stylesheet_link("' + href + '") }}';
     };
     var templateScript = function (src) {
-        return '<script type="text/javascript" src="' + src + '"></script>';
+        return '{{ javascript_include("' + src + '") }}';
     };
 
     var getMatch = function (reg, contents) {
